@@ -20,7 +20,8 @@ html, body{
 }
 
 h1{
-  font-size: --mobile--title--size;
+  font-size: var(--mobile--title--size);
+  color: var(--main--color);
 }
 
 main{
@@ -30,8 +31,9 @@ main{
   margin-top: 7.5%;
 }
 
-head{
+.title--section{
   display: flex;
+  justify-content: space-between;
   align-items: left;
-  justify-content: left;
+  margin-top: var( --mobile--margin--top);
 }

@@ -1,8 +1,8 @@
 :root{
-    --main--color: #0057FF ;
-    --main--text--color: #888888 ;
-    --main--color: #0057FF ;
-
-    --mobile--font--size: 1.2rem;
-    --mobile--title--size: 1.8rem;
+    --main--color: #0057FF;
+    --main--text--color: #888888;
+    --main--color: #0057FF;
+    --mobile--font--size: 1.6rem;
+    --mobile--title--size: 2.4em;
+    --mobile--margin--top: 2rem;
 }

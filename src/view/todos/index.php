@@ -1,3 +1,8 @@
-<head>
+<section class="header">
     <img src="../images/logo.svg" alt="Flancer logo" width="150">
-</head>
+</section>
+<section class="title--section">
+  <h1>Available freelancers</h1>
+  <img src="../images/filter.svg" alt="filter" width="25">
+</section>
+
