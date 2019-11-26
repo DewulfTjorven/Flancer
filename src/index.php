@@ -13,15 +13,15 @@ if (file_exists("../.env")) {
 
 $routes = array(
   'home' => array(
-    'controller' => 'Todos',
+    'controller' => 'flancers',
     'action' => 'index'
   ),
   'intro' => array(
-    'controller' => 'Todos',
+    'controller' => 'flancers',
     'action' => 'intro'
   ),
   'dashboard' => array(
-    'controller' => 'Todos',
+    'controller' => 'flancers',
     'action' => 'dashboard'
   ),
 );

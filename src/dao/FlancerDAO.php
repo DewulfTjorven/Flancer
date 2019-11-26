@@ -2,15 +2,15 @@
 
 require_once( __DIR__ . '/DAO.php');
 
-class TodoDAO extends DAO {
+class FlancerDAO extends DAO {
 
   public function selectAll(){
-    $sql = "SELECT * FROM `todos`";
+    $sql = "SELECT * FROM `flancers`";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
-
+/*
   public function selectById($id){
     $sql = "SELECT * FROM `todos` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
@@ -58,5 +58,5 @@ class TodoDAO extends DAO {
     }
     return $errors;
   }
-
+*/
 }

@@ -1,34 +1,37 @@
 <?php
 
 require_once __DIR__ . '/Controller.php';
-require_once __DIR__ . '/../dao/TodoDAO.php';
+require_once __DIR__ . '/../dao/FlancerDAO.php';
 
-class TodosController extends Controller {
+class FlancersController extends Controller {
 
-  private $todoDAO;
+  private $flancerDAO;
 
   function __construct() {
-    $this->todoDAO = new TodoDAO();
+    $this->flancerDAO = new FlancerDAO();
   }
 
   public function index() {
+    /*
     if (!empty($_POST['action'])) {
-      if ($_POST['action'] == 'insertTodo') {
+      if ($_POST['action'] == 'insertFlancer') {
         $this->handleInsertTodo();
       }
     }
+    */
 
     $todos = $this->todoDAO->selectAll();
     $this->set('todos', $todos);
     $this->set('title', 'Overview');
-
+/*
     if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
       header('Content-Type: application/json');
       echo json_encode($todos);
       exit();
     }
+*/
   }
-
+/*
   private function handleInsertTodo() {
     $data = array(
       'created' => date('Y-m-d H:i:s'),
@@ -63,5 +66,5 @@ class TodosController extends Controller {
       exit();
     }
   }
-  
+*/
 }
