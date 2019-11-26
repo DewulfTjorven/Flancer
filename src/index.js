@@ -1,4 +1,5 @@
-require('./style.css');
+require('./css/style.css');
+require('./css/vars.css');
 {
   const $todosList = document.getElementById(`todosList`),
     $insertTodoForm = document.getElementById(`insertTodoForm`),
