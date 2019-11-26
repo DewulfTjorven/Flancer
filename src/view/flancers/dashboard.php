@@ -6,8 +6,10 @@
   <a href=""><img src="../images/filter.svg" alt="filter" width="25"></a>
 </section>
 <section class="dashboard--content">
+  <article class="dashboard--item">
+
+  </article>
 </section>
 
-<a href="index.php?page=dashboard" class="button-bottom">Create a job application</a>
 
 
