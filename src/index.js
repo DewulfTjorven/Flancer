@@ -1,5 +1,7 @@
 require('./css/style.css');
 require('./css/vars.css');
+require('./css/reset.css');
+/*
 {
   const $todosList = document.getElementById(`todosList`),
     $insertTodoForm = document.getElementById(`insertTodoForm`),
@@ -60,3 +62,4 @@ require('./css/vars.css');
 
   init();
 }
+*/
