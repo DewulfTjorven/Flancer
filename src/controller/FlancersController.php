@@ -20,8 +20,8 @@ class FlancersController extends Controller {
     }
     */
 
-    $todos = $this->todoDAO->selectAll();
-    $this->set('todos', $todos);
+    $flancers = $this->flancerDAO->selectAll();
+    $this->set('flancers', $flancers);
     $this->set('title', 'Overview');
 /*
     if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
