@@ -15,7 +15,15 @@ $routes = array(
   'home' => array(
     'controller' => 'Todos',
     'action' => 'index'
-  )
+  ),
+  'intro' => array(
+    'controller' => 'Todos',
+    'action' => 'intro'
+  ),
+  'dashboard' => array(
+    'controller' => 'Todos',
+    'action' => 'dashboard'
+  ),
 );
 
 if(empty($_GET['page'])) {

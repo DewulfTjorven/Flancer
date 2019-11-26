@@ -24,16 +24,76 @@ h1{
   color: var(--main--color);
 }
 
+h2{
+  color: var(--main--color);
+  font-size: var(--mobile--h2--size);
+  font-weight: 500;
+}
+
+a{
+  font-size: var(--mobile--a--size);
+  text-decoration: none;
+}
+
+p{
+  font-size: var(--mobile--text--size);
+  color: var(--main--text--color);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.welcome--screen{
+  display: flex;
+  align-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome--content{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 20rem;
+}
+
+.intro--content{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 25rem;
+  text-align: center;
+}
+
+.button-blue{
+  background-color: var(--main--color);
+  padding: 1.2rem 4rem 1.2rem 4rem;
+  color: white;
+  border-radius: 0.15rem;
+  box-shadow: var(--box--shadow);
+}
+
+.button-grey{
+ 
+  color: var(--main--grey--color);
+  opacity: 0.8;
+}
+
 main{
   width: 85%;
-  height: auto;
   margin: auto;
-  margin-top: 7.5%;
+}
+
+.header{
+  margin-top: var(--mobile--padding--top);
 }
 
 .title--section{
+  padding-top: var(--mobile--padding--top);
   display: flex;
   justify-content: space-between;
   align-items: left;
-  margin-top: var( --mobile--margin--top);
 }

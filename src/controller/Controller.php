@@ -10,7 +10,9 @@ class Controller {
     if (basename(dirname(dirname(__FILE__))) != 'src') {
       $this->env = 'production';
     }
+    /*
     call_user_func(array($this, $this->route['action']));
+    */
   }
 
   public function render() {
