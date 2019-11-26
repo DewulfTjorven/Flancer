@@ -1,10 +1,11 @@
+require('./css/reset.css');
 require('./css/style.css');
 require('./css/vars.css');
-require('./css/reset.css');
+
 /*
 {
   const $todosList = document.getElementById(`todosList`),
-    $insertTodoForm = document.getElementById(`insertTodoForm`),
+    $insertTodoForm = document.etElementById(`insertTodoForm`),
     $inputText = document.getElementById(`inputText`);
 
   const init = () => {

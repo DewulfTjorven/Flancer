@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flancer</title>
     <?php /* NEW */ ?>
     <?php echo $css;?>
@@ -18,7 +18,6 @@
           echo '<div class="info box">' . $_SESSION['info'] . '</div>';
         }
       ?>
-      <header><h1>Flancer logo komt hier</h1></header>
       <?php echo $content;?>
     </main>
     <?php echo $js; ?>
