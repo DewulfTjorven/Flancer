@@ -11,7 +11,7 @@ class FlancersController extends Controller {
     $this->flancerDAO = new FlancerDAO();
   }
 
-  public function index() {
+  public function dashboard() {
     /*
     if (!empty($_POST['action'])) {
       if ($_POST['action'] == 'insertFlancer') {
@@ -22,7 +22,7 @@ class FlancersController extends Controller {
 
     $flancers = $this->flancerDAO->selectAll();
     $this->set('flancers', $flancers);
-    $this->set('title', 'Overview');
+    $this->set('title', 'dashboard');
 /*
     if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
       header('Content-Type: application/json');

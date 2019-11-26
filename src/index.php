@@ -13,17 +13,17 @@ if (file_exists("../.env")) {
 
 $routes = array(
   'home' => array(
-    'controller' => 'flancers',
+    'controller' => 'Flancers',
     'action' => 'index'
   ),
   'intro' => array(
-    'controller' => 'flancers',
+    'controller' => 'Flancers',
     'action' => 'intro'
   ),
   'dashboard' => array(
-    'controller' => 'flancers',
+    'controller' => 'Flancers',
     'action' => 'dashboard'
-  ),
+  )
 );
 
 if(empty($_GET['page'])) {
