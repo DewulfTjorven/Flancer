@@ -14,4 +14,11 @@
 ?>
   <a href=""><img src="../images/filter.svg" alt="filter" width="25"></a>
 </section>
+<section class="dashboard--content">
+  <article class="dashboard--item">
+
+  </article>
+</section>
+
+
 
