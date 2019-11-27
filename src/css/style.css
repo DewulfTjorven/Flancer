@@ -128,8 +128,49 @@ main{
 
 .flancer__card{
   box-shadow: var(--box--shadow);
+  border-radius: 0.2rem;
+  margin-bottom: 1.6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .flancer__name{
-  
+  font-size: var(--font--h2--size);
+}
+
+.flancer__bio{
+  font-size: var(--font--p--size--small);
+  width: 20rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.img__div{
+  width: 10.4rem;
+  height: 10.4rem;
+  border-radius: 0.2rem 0rem 0rem 0.2rem;
+}
+
+.flancer__image{
+  border-radius: 0.2rem 0rem 0rem 0.2rem;
+}
+
+.flancers__overview{
+  margin: 2rem 0;
+}
+
+.flancer__info{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flancer__data{
+  margin-left: 1.6rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
