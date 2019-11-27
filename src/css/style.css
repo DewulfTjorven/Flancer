@@ -141,7 +141,7 @@ main{
 
 .flancer__bio{
   font-size: var(--font--p--size--small);
-  width: 20rem;
+  width: 18rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -166,6 +166,12 @@ main{
   justify-content: flex-start;
 }
 
+.flancer--info{
+  color: var(--light--text--color);
+  font-weight: bold;
+  margin-right: 0.7rem;
+}
+
 .flancer__data{
   margin-left: 1.6rem;
   height: 8rem;
@@ -174,3 +180,9 @@ main{
   justify-content: space-between;
   align-items: flex-start;
 }
+
+.flancer__type{
+  color: var(--light--text--color);
+  font-weight: bold;
+}
+

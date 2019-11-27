@@ -19,7 +19,7 @@ class FlancersController extends Controller {
 
     $this->set('flancers', $flancers);
     $this->set('title', 'dashboard');
-    
+
   }
 
   public function detail() {
