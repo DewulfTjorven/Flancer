@@ -20,23 +20,23 @@ html, body{
 }
 
 h1{
-  font-size: var(--mobile--title--size);
+  font-size: var(--font--title--size);
   color: var(--main--color);
 }
 
 h2{
   color: var(--main--color);
-  font-size: var(--mobile--h2--size);
+  font-size: var(--font--h2--size);
   font-weight: 500;
 }
 
 a{
-  font-size: var(--mobile--a--size);
+  font-size: var(--font--a--size);
   text-decoration: none;
 }
 
 p{
-  font-size: var(--mobile--text--size);
+  font-size: var(--font--text--size);
   color: var(--main--text--color);
   font-weight: 400;
   line-height: 1.4;
@@ -66,6 +66,12 @@ p{
   flex-direction: column;
   height: 25rem;
   text-align: justify;
+
+}
+
+.intro--content p{
+  width: 80%;
+  
 }
 
 .button-blue{
@@ -74,6 +80,15 @@ p{
   color: white;
   border-radius: 0.15rem;
   box-shadow: var(--box--shadow);
+  transition: 0.2s ease;
+}
+
+.button-blue:hover{
+  background-color: var(--main--hover);
+  padding: 1.2rem 4rem 1.2rem 4rem;
+  color: white;
+  border-radius: 0.15rem;
+  transform: scale(1.02);
 }
 
 
@@ -89,11 +104,11 @@ main{
 }
 
 .header{
-  margin-top: var(--mobile--padding--top);
+  margin-top: var(--padding--top);
 }
 
 .title--section{
-  padding-top: var(--mobile--padding--top);
+  padding-top: var(--padding--top);
   display: flex;
   justify-content: space-between;
   align-items: left;
