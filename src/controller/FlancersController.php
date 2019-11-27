@@ -11,32 +11,36 @@ class FlancersController extends Controller {
     $this->flancerDAO = new FlancerDAO();
   }
 
-  public function index() {
-
-
-  }
-
-  public function intro() {
-
-
-  }
-
   public function dashboard() {
 
+    // alle flancers selecteren uit de database
+    // hier nog een filter plaatsen op afstand en reccommendations
     $flancers = $this->flancerDAO->selectAll();
 
     $this->set('flancers', $flancers);
-
     $this->set('title', 'dashboard');
+    
   }
-/*
 
-    if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
+  public function detail() {
 
-      header('Content-Type: application/json');
-      echo json_encode($flancers);
-      exit();
-    }
-  }
-*/
+    // controleren of het id in de querystring is opgegeven
+    if(!empty($_GET['id'])){
+     // de geselecteerde flancer ophalen
+     $flancer = $this->flancerDAO->selectById($_GET['id']);
+     
+   }
+
+   $this->set('flancer',$flancer);
+
+ }
+
+ public function index() {
+}
+public function intro() {
+}
+public function job() {
+}
+
+  
 }

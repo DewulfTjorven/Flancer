@@ -23,6 +23,14 @@ $routes = array(
   'dashboard' => array(
     'controller' => 'Flancers',
     'action' => 'dashboard'
+  ),
+  'job' => array(
+    'controller' => 'Flancers',
+    'action' => 'job'
+  ),
+  'detail' => array(
+    'controller' => 'Flancers',
+    'action' => 'detail'
   )
 );
 
