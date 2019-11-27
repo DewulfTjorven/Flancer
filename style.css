@@ -1,0 +1,370 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Frigate";
+  src: url("../assets/fonts/frigate/frigate.woff2") format("woff2"),
+    url("../assets/fonts/frigate/frigate.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hide {
+  display: none;
+}
+
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.header__img {
+  margin-bottom: 6vw;
+}
+
+.header__title {
+  font-family: "Frigate";
+  font-size: 3.5rem;
+  color: #e53f59;
+  margin-bottom: 1rem;
+}
+
+.header__subtitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #75dfdf;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__link {
+  color: #525c6c;
+  text-decoration: none;
+  font-size: 1.8rem;
+
+  padding: 0.8rem 0.8rem 0.9rem 0.8rem;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.6rem solid transparent;
+}
+
+.menu__link:hover {
+  color: white;
+  background-color: #de0065;
+  border-color: #f2f200;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto 40vh;
+  grid-template-areas:
+    "products"
+    "banner";
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  grid-area: banner;
+}
+
+main::before {
+  content: "";
+  z-index: -1;
+  background: url("../assets/img/bg.png") repeat 0 0;
+  grid-area: banner;
+}
+
+.banner__image {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.banner__quote {
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #525c6c;
+}
+
+.hashtag {
+  color: #de0065;
+}
+
+.product {
+  display: grid;
+  grid-template-rows: 13rem 5rem auto 5rem;
+  grid-template-columns: 1fr minmax(50vw, 70vw) 1fr;
+  justify-items: center;
+  margin-top: 5rem;
+}
+
+.product__image {
+  grid-column-start: 2;
+}
+
+.product__title {
+  grid-column-start: 2;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  align-self: center;
+}
+
+.product__description {
+  grid-column-start: 2;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.order {
+  grid-column-start: 2;
+
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  background-color: #de0065;
+
+  align-self: center;
+  padding: 1rem 2.7rem;
+}
+
+.order:hover {
+  background-color: #299696;
+}
+
+.product__title--groen,
+.product__description--groen {
+  color: #9b9b01;
+}
+.product__description--rood {
+  color: #e2000b;
+}
+.product__title--blauw {
+  color: #68d8d8;
+}
+.product__title--darkred {
+  color: #de0065;
+}
+.product__description--abzg {
+  color: #299696;
+}
+
+.footer {
+  background-color: #fdff03;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50vw;
+}
+
+.footer__title {
+  font-family: "Frigate";
+  color: #e53f59;
+  font-size: 1.4rem;
+  order: 1;
+}
+
+.address {
+  color: #525c6c;
+  font-size: 1.3rem;
+  font-style: normal;
+  order: 3;
+}
+
+.address:first-line {
+  font-weight: bold;
+}
+
+.footer__table {
+  order: 2;
+}
+.table {
+  color: #525c6c;
+}
+.table__header {
+  font-size: 2rem;
+}
+td {
+  font-size: 1.2rem;
+}
+
+.table__value {
+  text-align: right;
+}
+
+@media only screen and (min-width: 400px) {
+  .header__title {
+    font-size: 10vw;
+  }
+
+  .product__description {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .product {
+    grid-template-columns: 1fr 8fr 1fr;
+  }
+
+  .banner {
+    width: 90%;
+    justify-self: center;
+  }
+
+  .banner__quote {
+    text-align: right;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+  }
+
+  .banner__image {
+    display: block;
+    width: 30vw;
+    align-self: center;
+  }
+
+  .menu {
+    justify-content: flex-end;
+  }
+
+  .menu__link {
+    padding: 0.8rem 1.6rem 0.9rem 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  main {
+    grid-template-rows: minmax(30rem, 50vw) auto;
+    grid-template-areas:
+      "banner"
+      "products";
+  }
+
+  main::before {
+    background: url("../assets/svg/curve2.svg") repeat-x 0 100%,
+      url("../assets/img/bg.png") repeat 0 0;
+  }
+
+  .footer {
+    background-image: url("../assets/svg/curve.svg");
+    background-repeat: repeat-x;
+    flex-flow: row;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    height: 27rem;
+  }
+
+  .footer__title {
+    font-size: 2.54vw;
+  }
+
+  .address {
+    order: 0;
+  }
+
+  .menu {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 670px) {
+  .header__title {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (min-width: 670px) {
+  .product {
+    width: 30vw;
+  }
+
+  .products {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+  }
+
+  .product__description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+
+  .order {
+    padding: 0.4rem 2.7rem;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .banner__image {
+    align-self: flex-end;
+    width: 45vw;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  .banner__quote {
+    max-width: 60rem;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  main {
+    grid-template-rows: 50rem auto;
+  }
+
+  .banner {
+    max-width: 96rem;
+  }
+
+  .product {
+    max-width: 31rem;
+  }
+
+  .products {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .banner__image {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .banner {
+    justify-content: space-between;
+  }
+
+  .header {
+    padding-right: 5%;
+  }
+  .menu {
+    padding-right: 4%;
+  }
+}

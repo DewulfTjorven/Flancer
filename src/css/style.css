@@ -65,7 +65,7 @@ p{
   align-items: center;
   flex-direction: column;
   height: 25rem;
-  text-align: center;
+  text-align: justify;
 }
 
 .button-blue{

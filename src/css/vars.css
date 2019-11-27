@@ -1,13 +1,32 @@
 :root{
+    /* colors */
     --main--color: #0057FF;
     --main--grey--color: #888888;
     --main--text--color: #787878;
 
+    /* mobile fonts size */
     --mobile--font--size: 1.6rem;
     --mobile--title--size: 2.4em;
     --mobile--h2--size: 1.4em;
     --mobile--a--size: 1.8em;
     --mobile--text--size: 1.6em;
+
+    
+    /* ipad fonts size */
+    --mobile--font--size: 1.6rem;
+    --mobile--title--size: 2.4em;
+    --mobile--h2--size: 1.4em;
+    --mobile--a--size: 1.8em;
+    --mobile--text--size: 1.6em;
+
+    /* laptop fonts size */
+    --mobile--font--size: 1.4rem;
+    --mobile--title--size: 2.2em;
+    --mobile--h2--size: 1.4em;
+    --mobile--a--size: 1.6em;
+    --mobile--text--size: 1.4em;
+
+
 
     --mobile--margin--top: 2rem;
 
