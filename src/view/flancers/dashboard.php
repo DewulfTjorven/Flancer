@@ -11,7 +11,9 @@
   foreach($flancers as $flancer){
     ?>
   <div class="flancer__card">
-    <div class="img__div"><img class="flancer__image" src="../images/<?php echo $flancer["image"] ?>" width="104" alt="<?php echo $flancer["firstname"] ?>"></div>
+    <div class="img__div">
+      <img class="flancer__image" src="../images/<?php echo $flancer["image"] ?>" width="104" alt="<?php echo $flancer["firstname"] ?>">
+    </div>
     <div class="flancer__data">
       <p class="flancer__type"><?php echo $flancer["flancetype"] ?></p>
       <h2 class="flancer__name"><?php echo $flancer["firstname"] . ' ' . $flancer["lastname"] ?></h3>
