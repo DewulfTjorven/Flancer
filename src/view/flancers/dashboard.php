@@ -13,7 +13,7 @@
     <div><img src="" alt=""></div>
     <div class="flancer__data">
       <p class="flancer__type"><?php echo $flancer["flancetype"] ?></p>
-      <h3 class="flancer__name"><?php echo $flancer["firstname"] . ' ' . $flancer["lastname"] ?></h3>
+      <h2 class="flancer__name"><?php echo $flancer["firstname"] . ' ' . $flancer["lastname"] ?></h3>
       <p class="flancer__bio" ><?php echo $flancer["bio"] ?></p>
         <div>
           <p class="flancer__location"><?php echo $flancer["location"] ?></p>
