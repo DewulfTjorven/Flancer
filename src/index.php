@@ -27,6 +27,10 @@ $routes = array(
   'job' => array(
     'controller' => 'Flancers',
     'action' => 'job'
+  ),
+  'detail' => array(
+    'controller' => 'Flancers',
+    'action' => 'detail'
   )
 );
 
