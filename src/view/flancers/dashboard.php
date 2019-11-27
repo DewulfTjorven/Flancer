@@ -6,18 +6,14 @@
   <?php
   foreach($flancers as $flancer){
     ?>
-    <li class='flancer'>
-      <span class='flancer__firstname'><?php echo $flancer["firstname"];?></span>
-    </li>
+  <div>
+  <div><img src="" alt=""></div>
+  <h3 class="flancer__name"><?php echo $flancer["firstname"] . ' ' . $flancer["lastname"] ?></h3>
+  </div>
     <?php
   }
 ?>
   <a href=""><img src="../images/filter.svg" alt="filter" width="25"></a>
-</section>
-<section class="dashboard--content">
-  <article class="dashboard--item">
-
-  </article>
 </section>
 
 
