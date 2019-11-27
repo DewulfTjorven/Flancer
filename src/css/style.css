@@ -71,7 +71,7 @@ p{
 
 .intro--content p{
   width: 80%;
-  
+
 }
 
 .button-blue{
@@ -79,9 +79,6 @@ p{
   padding: 1.2rem 4rem 1.2rem 4rem;
   color: white;
   border-radius: 0.15rem;
-<<<<<<< HEAD
-  box-shadow: var(--button--box--shadow);
-=======
   box-shadow: var(--box--shadow);
   transition: 0.2s ease;
 }
@@ -92,7 +89,6 @@ p{
   color: white;
   border-radius: 0.15rem;
   transform: scale(1.02);
->>>>>>> 2bf1924076418b87d10c2d17db031af63416c0f0
 }
 
 
