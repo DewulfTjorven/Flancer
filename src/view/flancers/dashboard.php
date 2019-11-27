@@ -4,7 +4,7 @@
 <section class="title--section">
   <h1>Available freelancers</h1>
 
-  <a href=""><img src="../images/filter.svg" alt="filter" width="25"></a>
+  <a href="index.php?page=job"><img src="../images/filter.svg" alt="filter" width="25"></a>
 </section>
   <?php
   foreach($flancers as $flancer){
