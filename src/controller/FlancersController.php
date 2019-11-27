@@ -5,7 +5,7 @@ require_once __DIR__ . '/../dao/FlancerDAO.php';
 
 class FlancersController extends Controller {
 
-  private $todoDAO;
+  private $flancerDAO;
 
   function __construct() {
     $this->flancerDAO = new FlancerDAO();

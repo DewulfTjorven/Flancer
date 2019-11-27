@@ -11,7 +11,7 @@
     --mobile--a--size: 1.8em;
     --mobile--text--size: 1.6em;
 
-    
+
     /* ipad fonts size */
     --mobile--font--size: 1.6rem;
     --mobile--title--size: 2.4em;
@@ -32,5 +32,6 @@
 
     --mobile--padding--top: 4rem;
 
-    --box--shadow: 0px 0px 25px rgba(0,87,255,0.55);
+    --button--box--shadow: 0px 0px 25px rgba(0,87,255,0.55);
+    --box--shadow: 0px 0px 10px rgba(0,0,0,0.10);
 }
