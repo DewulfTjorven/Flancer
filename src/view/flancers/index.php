@@ -1,5 +1,5 @@
-<section class="welcome--screen">
-  <article class="welcome--content">
+<section class="welcome__screen">
+  <article class="welcome__content">
       <img src="../images/logo.svg" alt="Flancer logo" width="150">
       <h2>Your freelance search engine</h2>
       <a href="index.php?page=intro" class="button-blue">introduction ></a>

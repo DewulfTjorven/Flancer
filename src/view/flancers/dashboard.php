@@ -1,7 +1,7 @@
 <section class="header">
   <img src="../images/logo.svg" alt="Flancer logo" width="150">
 </section>
-<section class="title--section">
+<section class="title__section">
   <div class="title">
     <h1>Available freelancers</h1>
   </div>
@@ -40,8 +40,13 @@
         <h2 class="flancer__name"><?php echo $flancer["firstname"] . ' ' . $flancer["lastname"] ?></h3>
         <p class="flancer__bio" ><?php echo $flancer["bio"] ?></p>
           <div class="flancer__info">
+<<<<<<< HEAD
             <p class="flancer--info flancer--info__location"><?php echo $flancer["location"] ?></p>
             <p class="flancer--info flancer--info__recommendations"><?php echo $flancer["recommendations"]?> recommendations</p>
+=======
+            <p class="flancer__info flancer__info__location"><?php echo $flancer["location"] ?></p>
+            <p class="flancer__info flancer__info__recommendations"><?php echo $flancer["recommendations"] ?> recommendations</p>
+>>>>>>> 626a33ea5f14ec06180707820de9ceda1404d9a8
           </div>
       </div>
     </div>

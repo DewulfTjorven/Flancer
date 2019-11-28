@@ -3,7 +3,15 @@
 </section>
 
 <section class="details">
-  <h2 class="details__title"><?php echo $flancer['firstname'] . " " . $flancer['lastname']; ?></h2>
+  <h2 class="details__name"><?php echo $flancer['firstname'] . " " . $flancer['lastname']; ?></h2><br>
+  <img class="details__image" src="../images/<?php echo $flancer["image"] ?>" width="100" alt="<?php echo $flancer["firstname"] ?>">
+  <p class="details__title"><?php echo $flancer['bio']; ?></p><br>
+  <p class="details__title">Location: <?php echo $flancer['location']; ?> from you</p><br>
+  <p class="details__title">This Freelancer got recommended <?php echo $flancer['recommendations']; ?> times</p><br>
+  
+  <a href="index.php?page=dashboard" class="button-blue">Hire <?php echo $flancer['firstname']; ?></a>
+
+
 
   </form>
 </section>
