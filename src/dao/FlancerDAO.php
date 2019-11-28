@@ -19,12 +19,27 @@ class FlancerDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
-  public function filter($filter){
-    $sql = "SELECT * FROM `flancers` ORDER BY :filter DESC";
+  public function filterByRecommendations(){
+    $sql = "SELECT * FROM `flancers` ORDER BY `recommendations` DESC";
     $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':filter', $filter);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
+
+  public function filterByLocation(){
+    $sql = "SELECT * FROM `flancers` ORDER BY `location` DESC";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function filterByPrice(){
+    $sql = "SELECT * FROM `flancers` ORDER BY `pricelow` ASC";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+
 
 }
