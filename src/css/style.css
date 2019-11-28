@@ -80,7 +80,7 @@ p {
   padding: 1.2rem 4rem;
   color: white;
   border-radius: .15rem;
-  box-shadow: var(--box--shadow);
+  box-shadow: var(--button--box--shadow);
   transition: .2s ease;
 }
 
