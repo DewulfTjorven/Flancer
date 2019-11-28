@@ -12,17 +12,23 @@ class FlancersController extends Controller {
   }
 
   public function dashboard() {
-
+/*
     if(!empty($_GET['filter__select'])){
       // de geselecteerde flancer ophalen
-      $filterresult = $this->flancerDAO->filterFlancers($_GET['filter__select']);
-
+      $flancers = $this->flancerDAO->filterFlancers($_GET['filter__select']);
+     }else{
+      $flancers = $this->flancerDAO->selectAll();
      }
 
     // alle flancers selecteren uit de database
     // hier nog een filter plaatsen op afstand en reccommendations
-    $flancers = $this->flancerDAO->selectAll();
-
+*/
+    if (!empty($_GET['action']) && $_GET['action'] == 'filter') {
+      $flancers = $this->flancerDAO->filter($_GET['orderby']);
+    }/*else{
+      $flancers = $this->flancerDAO->selectAll();
+    }
+*/
     $this->set('flancers', $flancers);
     $this->set('title', 'dashboard');
 

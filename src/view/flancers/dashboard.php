@@ -14,8 +14,10 @@
 
 <section class="filter">
     <h2 class="filter__title">Filter</h2>
-    <form action="index.php?page=dashboard" class="filter__form" method="get">
-      <select name="filter__select" id="filter__select">
+    <form action="index.php" method="get" id="flancerform">
+    <input type="hidden" name="page" value="dashboard" />
+    <input type="hidden" name="action" value="filter" />
+      <select name="orderby" id="orderby">
        <option value="recommendations">recommendations</option>
        <option value="location">location</option>
        <option value="pricelow">pricelow</option>
