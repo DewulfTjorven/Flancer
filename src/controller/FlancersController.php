@@ -13,6 +13,12 @@ class FlancersController extends Controller {
 
   public function dashboard() {
 
+    if(!empty($_GET['filter__select'])){
+      // de geselecteerde flancer ophalen
+      $filterresult = $this->flancerDAO->filterFlancers($_GET['filter__select']);
+
+     }
+
     // alle flancers selecteren uit de database
     // hier nog een filter plaatsen op afstand en reccommendations
     $flancers = $this->flancerDAO->selectAll();
@@ -28,8 +34,8 @@ class FlancersController extends Controller {
     if(!empty($_GET['id'])){
      // de geselecteerde flancer ophalen
      $flancer = $this->flancerDAO->selectById($_GET['id']);
-     
-   }
+
+    }
 
    $this->set('flancer',$flancer);
 
@@ -42,5 +48,5 @@ public function intro() {
 public function job() {
 }
 
-  
+
 }

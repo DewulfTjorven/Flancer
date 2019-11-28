@@ -19,4 +19,12 @@ class FlancerDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
+  public function filterFlancers($filter){
+    $sql = "SELECT * FROM `flancers` ORDER BY :filter";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':filter', $filter);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
 }

@@ -11,13 +11,18 @@
 </section>
 <section>
 <p>filter by</p>
-<form action="dashboard" method="post">
-<select placeholder="filter">
-  <option value="recommendations">recommendations</option>
-  <option value="distance">distance</option>
-  <option value="pricelow">pricelow</option>
-</select>
-</form>
+
+<section class="filter">
+    <h2 class="filter__title">Filter</h2>
+    <form action="index.php?page=dashboard" class="filter__form" method="get">
+      <select name="filter__select" id="filter__select">
+       <option value="recommendations">recommendations</option>
+       <option value="location">location</option>
+       <option value="pricelow">pricelow</option>
+      </select>
+      <input type="submit" value="Filter" class="form__submit input input--button">
+    </form>
+  </section>
 
 </section>
 <section class="flancers__overview">
@@ -36,7 +41,7 @@
         <p class="flancer__bio" ><?php echo $flancer["bio"] ?></p>
           <div class="flancer__info">
             <p class="flancer--info flancer--info__location"><?php echo $flancer["location"] ?></p>
-            <p class="flancer--info flancer--info__recommendations"><?php echo $flancer["recommendations"] ?> recommendations</p>
+            <p class="flancer--info flancer--info__recommendations"><?php echo $flancer["recommendations"]?> recommendations</p>
           </div>
       </div>
     </div>
