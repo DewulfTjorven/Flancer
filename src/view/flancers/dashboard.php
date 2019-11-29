@@ -10,13 +10,15 @@
   </div>
 </section>
 <section>
-<p>filter by</p>
+
 
 <section class="filter">
+    <h2 class="filter__title">Filter</h2>
+    <p>filter by</p>
     <form action="index.php" method="get" id="flancerform">
     <input type="hidden" name="page" value="dashboard" />
     <input type="hidden" name="action" value="filter" />
-      <select name="orderby" id="orderby">
+      <select name="orderby" id="orderby" class="orderby">
       <option class="filter__placeholder">--filter je resultaten--</option>
        <option value="recommendations">recommendations</option>
        <option value="location">location</option>

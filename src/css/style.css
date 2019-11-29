@@ -166,10 +166,10 @@ main {
   justify-content: flex-start;
 }
 
-.flancer--info {
+.flancer__info {
   color: var(--light--text--color);
   font-weight: bold;
-  margin-right: .7rem;
+  margin-right: 0.7rem;
 }
 
 .flancer__data {
@@ -192,4 +192,27 @@ main {
 
 .padding--bottom {
   padding-bottom: var(--padding--bottom);
+}
+
+.orderby{
+  border: solid 0.1rem var(--main--color);
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  margin: 2rem 0rem;
+  -webkit-appearance: none;
+  font-size: var(--font--title--size);
+}
+
+.input--button{
+  background-color: var(--main--color);
+  border: none;
+  color: white;
+  padding: 0.5rem 3rem;
+  text-decoration: none;
+  margin: 2rem 0rem;
+  cursor: pointer;
+  border: solid 0.1rem var(--main--color);
+  border-radius: 0.2rem;
+  font-size: var(--font--title--size);
+  text-transform: uppercase;
 }

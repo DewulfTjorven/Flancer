@@ -26,7 +26,7 @@ class FlancersController extends Controller {
 
     $this->set('flancers', $flancers);
     $this->set('title', 'dashboard');
-    
+
   }
 
   public function detail() {
@@ -35,7 +35,7 @@ class FlancersController extends Controller {
     if(!empty($_GET['id'])){
      // de geselecteerde flancer ophalen
      $flancer = $this->flancerDAO->selectById($_GET['id']);
-     
+
    }
 
    $this->set('flancer',$flancer);
@@ -49,5 +49,5 @@ public function intro() {
 public function job() {
 }
 
-  
+
 }
