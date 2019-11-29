@@ -18,12 +18,20 @@
     <input type="hidden" name="page" value="dashboard" />
     <input type="hidden" name="action" value="filter" />
       <select name="orderby" id="orderby">
+      <option class="filter__placeholder">--filter je resultaten--</option>
        <option value="recommendations">recommendations</option>
        <option value="location">location</option>
        <option value="pricelow">pricelow</option>
       </select>
       <input type="submit" value="Filter" class="form__submit input input--button">
     </form>
+    <?php
+      if (!empty($_GET['action']) && $_GET['orderby'] != '--filter je resultaten--'){
+       echo '<p class="filter__p">You filtered by ' . $_GET['orderby'] . '</p>';
+      }
+
+    ?>
+
   </section>
 
 </section>
@@ -42,7 +50,7 @@
         <h2 class="flancer__name"><?php echo $flancer["firstname"] . ' ' . $flancer["lastname"] ?></h3>
         <p class="flancer__bio" ><?php echo $flancer["bio"] ?></p>
           <div class="flancer__info">
-            <p class="flancer__info flancer__info__location"><?php echo '<' . $flancer["location"] . ' km'?></p>
+            <p class="flancer__info flancer__info__location"><?php echo '<' . $flancer["location"] . ' km '?></p>
             <p class="flancer__info flancer__info__recommendations"><?php echo $flancer["recommendations"] ?> recommendations</p>
           </div>
       </div>
