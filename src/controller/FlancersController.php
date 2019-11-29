@@ -5,14 +5,11 @@ require_once __DIR__ . '/../dao/FlancerDAO.php';
 
 class FlancersController extends Controller {
 
-  private $flancerDAO;
-
   function __construct() {
     $this->flancerDAO = new FlancerDAO();
   }
 
   public function dashboard() {
-
 
     if (!empty($_GET['action']) && $_GET['action'] == 'filter' && $_GET['orderby'] == 'recommendations') {
       $flancers = $this->flancerDAO->filterByRecommendations();
@@ -30,19 +27,23 @@ class FlancersController extends Controller {
   }
 
   public function detail() {
-
-    // controleren of het id in de querystring is opgegeven
     if(!empty($_GET['id'])){
-     // de geselecteerde flancer ophalen
      $flancer = $this->flancerDAO->selectById($_GET['id']);
-
    }
 
    $this->set('flancer',$flancer);
 
  }
 
- public function index() {
+ public function form() {
+    if(!empty($_POST["action"])) {
+      if($_POST["action"] == "createjob") {
+        $job = $this->flancerDAO->createJob($_POST);
+      }
+    }
+  }
+
+public function index() {
 }
 public function intro() {
 }

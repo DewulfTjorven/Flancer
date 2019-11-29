@@ -40,6 +40,18 @@ class FlancerDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public function createjob($data) {
+    $sql = "INSERT INTO `jobs` (`jobname`, `description`, `price`, `duration`, `location`, `skills`) VALUES (:jobname, :description, :price, :duration, :location, :skills)";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue("jobname", $data["jobname"]);
+    $stmt->bindValue("description", $data["description"]);
+    $stmt->bindValue("price", $data["price"]);
+    $stmt->bindValue("duration", $data["duration"]);
+    $stmt->bindValue("location", $data["location"]);
+    $stmt->bindValue("skills", $data["skills"]);
+    $stmt->execute();
+  }
+
 
 
 }

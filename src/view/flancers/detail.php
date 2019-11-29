@@ -9,7 +9,7 @@
   <p class="details__title">Location: <?php echo $flancer['location']; ?> from you</p><br>
   <p class="details__title padding--bottom">This Freelancer got recommended <?php echo $flancer['recommendations']; ?> times</p><br>
   
-  <a href="index.php?page=dashboard" class="button-blue">Hire <?php echo $flancer['firstname']; ?></a>
+  <a href="index.php?page=job" class="button-blue">Hire <?php echo $flancer['firstname']; ?></a>
 
   </form>
 </section>

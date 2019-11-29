@@ -18,8 +18,8 @@
     <form action="index.php" method="get" id="flancerform">
     <input type="hidden" name="page" value="dashboard" />
     <input type="hidden" name="action" value="filter" />
-      <select name="orderby" id="orderby" class="orderby">
-      <option class="filter__placeholder">--filter je resultaten--</option>
+      <select name="orderby" id="orderby">
+      <option class="filter__placeholder">--Filter your results--</option>
        <option value="recommendations">recommendations</option>
        <option value="location">location</option>
        <option value="pricelow">pricelow</option>
@@ -27,7 +27,7 @@
       <input type="submit" value="Filter" class="form__submit input input--button">
     </form>
     <?php
-      if (!empty($_GET['action']) && $_GET['orderby'] != '--filter je resultaten--'){
+      if (!empty($_GET['action']) && $_GET['orderby'] != '--Fiter your results--'){
        echo '<p class="filter__p">You filtered by ' . $_GET['orderby'] . '</p>';
       }
 
