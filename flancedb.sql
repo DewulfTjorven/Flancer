@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 27, 2019 at 01:21 PM
--- Server version: 5.7.25
--- PHP Version: 7.3.1
+-- Generation Time: Nov 29, 2019 at 03:54 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -53,7 +53,23 @@ INSERT INTO `flancers` (`id`, `firstname`, `lastname`, `flancetype`, `location`,
 (3, 'Dirk', 'Janssen', 'UX and Motion designer', '<20 km', 12, 200, 1500, 28, 18, 'After graduating from graphical design at Artevelde in Gent, Dirk started promoting his work on Instagram. He makes websites with a beautiful sense of depth and is a huge fan of the parallax effect.', 'FT', 'fulltime', 'dirk.jpg'),
 (4, 'Klaas', 'Vanassche', 'Logo designer', '<50 km', 12, 50, 500, 23, 12, 'Ever since Klaas could work with Adobe Illustrator he made artwork for friends and family. He wanted to make this hobby his job and so he did. He has made logos for some big companies and they were very happy with the result.\r\n', 'fh', 'from home', 'klaas.jpg'),
 (5, 'Anne', 'Koolmans', 'UX designer', '<20 km', 4, 300, 1000, 24, 3, 'Anne is quite new to the flancing scene with only three jobs completed so far, but wow, they are very impressive. Anne designed websites for 2 big Belgian companies with zero problems encountered.', 'fh', 'from home', 'anne.jpg'),
-(6, 'Tjorven', 'Jonckheere', 'Front-end developer and Back-end developer', '<5 km', 15, 2000, 4000, 47, 20, 'Tjorven has completed a lot of jobs for Flance. He is a backend developer that has been freelancing for quite some time. He prefers fulltime flancing which means that he works at a company until his job is complete.', 'ft', 'fulltime', 'tjorven.jpg');
+(6, 'Tjorven', 'Jonckheere', 'Front-end developer and Back-end developer', '<5 km', 15, 2000, 4000, 47, 20, 'Tjorven has completed a lot of jobs for Flance. He is a backend developer that has been freelancing for quite some time. He prefers fulltime flancing which means that he works at a company until his job is complete.', 'ft', 'fulltime', 'placeholder.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `price` int(11) NOT NULL,
+  `duration` int(11) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `skills` varchar(255) NOT NULL,
+  `jobname` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -66,6 +82,12 @@ ALTER TABLE `flancers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -74,6 +96,12 @@ ALTER TABLE `flancers`
 --
 ALTER TABLE `flancers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
