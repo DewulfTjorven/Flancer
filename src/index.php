@@ -31,6 +31,10 @@ $routes = array(
   'detail' => array(
     'controller' => 'Flancers',
     'action' => 'detail'
+  ),
+  'form' => array(
+    'controller' => 'Flancers',
+    'action' => 'form'
   )
 );
 

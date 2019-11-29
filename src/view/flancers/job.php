@@ -24,7 +24,7 @@
 
 
   <section class="padding--bottom">
-  <a href="index.php?page=job" class="button-blue">Add a job</a>
+  <a href="index.php?page=form" class="button-blue">Add a job</a>
   </section>
 
 
