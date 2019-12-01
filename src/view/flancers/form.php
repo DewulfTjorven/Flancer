@@ -22,3 +22,12 @@
     <input type="submit" class="button button--orange">Place Order</button>
   </form>
 </section>
+<?php
+if(!empty($_POST)){
+?>
+<section class="padding--bottom">
+  <a href="index.php?page=added" class="button-blue">Add a job</a>
+</section>
+<?php
+}
+?>
