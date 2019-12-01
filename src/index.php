@@ -43,7 +43,10 @@ $routes = array(
   ),'jobdetail' => array(
   'controller' => 'Flancers',
   'action' => 'jobdetail'
-)
+  ),'formupdate' => array(
+    'controller' => 'Flancers',
+    'action' => 'formupdate'
+    )
 );
 
 if(empty($_GET['page'])) {

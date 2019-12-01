@@ -4,7 +4,7 @@
 
 <section class="title__section padding--bottom">
     <h1 class="padding--bottom">Add a job</h1>
-    <a href="index.php?page=job"><img src="../images/filter.svg" alt="view jobs" width="22">
+    <a href="index.php?page=job"><img src="../images/filter.svg" alt="view jobs" width="22"></a>
 </section>
 
 <section>
@@ -12,39 +12,25 @@
     <input type="hidden" name="action" value="createjob" class=""/>
     <input type="hidden" name="page" value="added"/>
     <label for="form__jobname">Name of the job</label>
-    <input class="form__jobname padding--bottom" type="text" name="jobname" required />
+    <input class="form__jobname padding--bottom" type="text" name="jobname" required value="<?php if(!empty($_POST['jobname']) && $_POST['action'] == 'createjob'){echo $_POST['jobname'];} ?>"/>
     <label for="form__textarea">Describe your job offer</label>
-    <textarea class="form__textarea" type="text" name="description" rows = "10" cols="100" required></textarea>
-    <label for="form__price" class=>Budget</label>
-    <input class="form__price" type="number" name="price" min=0 required />
-    <label for="form__duration">Duration in days</label>
-    <input class="form__duration" type="number" name="duration" min=0 required />
-    <label for="form__location">Location</label>
-    <input class="form__location" type="text" name="location" required />
-    <label for="form__skills">Required skills</label>
-    <input class="form__skills" type="text" name="skills" required />
-<<<<<<< HEAD
-    <button href="index.php?page=job" type="submit" class="button-blue">Add job</button>
-=======
-    <?php
-    if(empty($_POST)){
-    echo '<button type="submit" class="button-blue">Next step</button>';
-    }
-    ?>
+    <textarea class="form__textarea" type="text" name="description" rows = "10" cols="100" required><?php if(!empty($_POST['description']) && $_POST['action'] == 'createjob'){echo $_POST['description'];} ?></textarea>
+    <input class="hidden" type="number" name="price" min=0 required value="0"/>
+    <input class="hidden" type="number" name="duration" min=0 required value="0"/>
+    <input class="hidden" type="text" name="location" required value="/"/>
+    <input class="hidden" type="text" name="skills" required value="/"/>
+    <?php if(!empty($_POST['action']) && $_POST['action'] == 'createjob'){ ?>
+      <a href="index.php?page=formupdate" class="button-blue">Add job info</a>
+    <?php }else{ ?>
 
+      <button  type="submit" class="button-blue">Add job</button>
+    <?php } ?>
 
->>>>>>> 26f5ecea17dc7e8a8a7f3f29ebc316588ba2f7be
   </form>
 </section>
 <?php
 if(!empty($_POST)){
 ?>
-<<<<<<< HEAD
-=======
-<section class="padding--bottom">
-    <a href="index.php?page=added" class="button-blue button-blue--form">Next</a>
-</section>
->>>>>>> 26f5ecea17dc7e8a8a7f3f29ebc316588ba2f7be
 <?php
 }
 ?>

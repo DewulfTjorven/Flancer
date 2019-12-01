@@ -35,12 +35,42 @@ class FlancersController extends Controller {
 
  }
 
- public function form() {
+public function form() {
     if(!empty($_POST["action"]) && $_POST["action"] == "createjob") {
         $jobs = $this->flancerDAO->createJob($_POST);
     }
 
+}
+
+public function formupdate() {
+  $lastjob = $this->flancerDAO->selectLastAddedJob();
+  $this->set('lastjob',$lastjob);
+
+  if(!empty($_GET['state'])){
+    if($_GET['state'] == 'updated'){
+      $this->set('updated',true);
+    }
   }
+
+  if (!empty($_POST['action'])) {
+    if ($_POST['action'] == 'updatejob'){
+      $job['id'] = $_POST['id'];
+      $job['duration'] = $_POST['duration'];
+      $job['skills'] = $_POST['skills'];
+      $job['price'] = $_POST['price'];
+      $job['location'] = $_POST['location'];
+
+      $updatedJob = $this->flancerDAO->updateJob($job);
+    }
+      // de geselecteerde show aanpassen met de waarden uit de $_POST (het formulier dus)
+
+
+      // de serie updaten in de database en de gewijzigde serie ophalen
+
+      // controleren of dit gelukt is
+  }
+}
+
 
 public function index() {
 }
@@ -51,10 +81,12 @@ public function job() {
   $this->set('jobs',$jobs);
 
 }
+
 public function added() {
   $lastjob = $this->flancerDAO->selectLastAddedJob();
   $this->set('lastjob',$lastjob);
 }
+
 public function jobdetail() {
   if(!empty($_GET['id'])){
     $job = $this->flancerDAO->selectByJobId($_GET['id']);

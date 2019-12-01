@@ -4,6 +4,10 @@
 }
 /* stylelint-enable */
 
+.hidden{
+  display: none;
+}
+
 html {
   box-sizing: inherit;
   font-size: 62.5%;
@@ -90,6 +94,7 @@ p {
   border-radius: .15rem;
   box-shadow: var(--button--box--shadow);
   transition: 0.2s ;
+  text-align: center;
 }
 
 .button-blue:hover {
@@ -328,6 +333,8 @@ main {
   display: block;
   text-align: center;
   z-index: 1;
+}
+
 .job__price h2{
   font-size: 2.8rem;
   color: white;
