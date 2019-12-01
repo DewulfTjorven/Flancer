@@ -5,17 +5,17 @@
   <div class="title">
     <h1 class="padding--bottom">This the job you added.</h1>
     <article class="lastjob">
-    <h2><?php echo $lastjob['jobname']?></h2>
-    <h2><?php echo $lastjob['skills']?></h2>
-    <h2><?php echo $lastjob['location']?></h2>
-    <h2><?php echo $lastjob['price']?></h2>
-    <h2><?php echo $lastjob['duration']?></h2>
-    <h2><?php echo $lastjob['description']?></h2>
+    <p class="padding--bottom"><?php echo $lastjob['jobname']?></h2>
+    <p class="padding--bottom"><?php echo $lastjob['description']?></h2>
+    <p class="padding--bottom"><?php echo $lastjob['price']?></h2>
+    <p class="padding--bottom"><?php echo $lastjob['duration']?></h2>
+    <p class="padding--bottom"><?php echo $lastjob['location']?></h2>
+    <p class="padding--bottom"><?php echo $lastjob['skills']?></h2>
     </article>
   </div>
 </section>
 
 
   <section class="padding--bottom">
-  <a href="index.php?page=job" class="button-blue">Other Jobs</a>
+  <a href="index.php?page=job" class="button-blue">Your job overview</a>
   </section>

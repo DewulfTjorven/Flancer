@@ -12,7 +12,7 @@
     if(!empty($jobs)){
       foreach($jobs as $job){
         ?>
-      <a href ="index.php?page=detail&id=<?php echo $job['id']; ?>">
+      <a href ="index.php?page=jobdetail&id=<?php echo $job['id']; ?>">
         <div class="job__card">
           <div class="flancer__data">
             <p class="flancer__type"><?php echo $job["jobname"] ?></p>

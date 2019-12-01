@@ -35,10 +35,15 @@ $routes = array(
   'form' => array(
     'controller' => 'Flancers',
     'action' => 'form'
+
   ),'added' => array(
     'controller' => 'Flancers',
     'action' => 'added'
-  )
+
+  ),'jobdetail' => array(
+  'controller' => 'Flancers',
+  'action' => 'jobdetail'
+)
 );
 
 if(empty($_GET['page'])) {

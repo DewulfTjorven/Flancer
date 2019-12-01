@@ -55,6 +55,13 @@ public function added() {
   $lastjob = $this->flancerDAO->selectLastAddedJob();
   $this->set('lastjob',$lastjob);
 }
+public function jobdetail() {
+  if(!empty($_GET['id'])){
+    $job = $this->flancerDAO->selectByJobId($_GET['id']);
+  }
+
+  $this->set('job',$job);
+}
 
 
 }
