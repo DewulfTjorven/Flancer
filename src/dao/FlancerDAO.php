@@ -18,6 +18,7 @@ class FlancerDAO extends DAO {
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
+
   public function selectByJobId($id){
     $sql = "SELECT * FROM `jobs` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
@@ -99,7 +100,12 @@ class FlancerDAO extends DAO {
       $stmt->execute();
   }
 
+  public function deleteJob($id){
+    $sql = "DELETE FROM `jobs` WHERE `id` = :id";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+  }
 
 
-
-    }
+}
