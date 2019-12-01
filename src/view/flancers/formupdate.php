@@ -7,7 +7,7 @@
     <a href="index.php?page=job"><img src="../images/filter.svg" alt="view jobs" width="22"></a>
 </section>
 
-<form action="index.php?page=formupdate" method="post">
+<form action="index.php?page=formupdate" method="post" class="job__form">
     <input type="hidden" name="action" value="updatejob">
     <input type="hidden" name="id" value="<?php echo $lastjob['id'] ?>">
 

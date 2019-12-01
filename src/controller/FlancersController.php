@@ -75,6 +75,8 @@ public function formupdate() {
   }
 }
 
+
+
 public function jobUpdate() {
   if(!empty($_GET['id'])){
     $job = $this->flancerDAO->selectByJobId($_GET['id']);
@@ -106,7 +108,7 @@ public function jobUpdate() {
       exit;
     }
     }
-    }
+  }
 
 public function index() {
 }

@@ -50,9 +50,8 @@ $routes = array(
 
   ),'jobupdate' => array(
     'controller' => 'Flancers',
-    'action' => 'jobupdate'
-    
-    )
+    'action' => 'formupdate'
+  )
 );
 
 if(empty($_GET['page'])) {
