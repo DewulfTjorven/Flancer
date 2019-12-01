@@ -13,7 +13,6 @@
 
 
 <section class="filter">
-    <h2 class="filter__title">Filter</h2>
     <p>filter by</p>
     <form action="index.php" method="get" id="flancerform">
     <input type="hidden" name="page" value="dashboard" />

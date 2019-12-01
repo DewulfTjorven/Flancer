@@ -3,10 +3,8 @@
 </section>
 
 <section class="title__section padding--bottom">
-  <div class="title">
     <h1 class="padding--bottom">Add a job</h1>
-    <p>please fill in the form</p>
-  </div>
+    <a href="index.php?page=job"><img src="../images/filter.svg" alt="view jobs" width="22">
 </section>
 
 <section>
@@ -25,16 +23,12 @@
     <input class="form__location" type="text" name="location" required />
     <label for="form__skills">Required skills</label>
     <input class="form__skills" type="text" name="skills" required />
-    <button type="submit" class="button-blue">Next step</button>
-
+    <button href="index.php?page=job" type="submit" class="button-blue">Add job</button>
   </form>
 </section>
 <?php
 if(!empty($_POST)){
 ?>
-<section class="padding--bottom">
-  <a href="index.php?page=added" class="button-blue">Next</a>
-</section>
 <?php
 }
 ?>
