@@ -19,14 +19,19 @@
     <input type="number" name="duration" min=0 required />
     <input type="text" name="location" required />
     <input type="text" name="skills" required />
-    <input type="submit" class="button button--orange">Place Order</button>
+    <?php
+    if(empty($_POST)){
+    echo '<input type="submit" value="Request job" class="button button--orange">';
+    }
+    ?>s
+
   </form>
 </section>
 <?php
 if(!empty($_POST)){
 ?>
 <section class="padding--bottom">
-  <a href="index.php?page=added" class="button-blue">Add a job</a>
+  <a href="index.php?page=added" class="button-blue">Next</a>
 </section>
 <?php
 }

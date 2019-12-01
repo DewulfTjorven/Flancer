@@ -214,3 +214,12 @@ main {
   font-size: var(--font--title--size);
   text-transform: uppercase;
 }
+
+.job__card{
+  box-shadow: var(--box--shadow);
+  border-radius: .2rem;
+  margin-bottom: 1.6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
