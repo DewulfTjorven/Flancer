@@ -18,7 +18,7 @@ class FlancersController extends Controller {
     }else if(!empty($_GET['action']) && $_GET['action'] == 'filter' && $_GET['orderby'] == 'location'){
       $flancers = $this->flancerDAO->filterByLocation();
     }else{
-      $flancers = $this->flancerDAO->selectAll();
+      $flancers = $this->flancerDAO->selectAllFlancers();
     }
 
     $this->set('flancers', $flancers);
@@ -36,11 +36,10 @@ class FlancersController extends Controller {
  }
 
  public function form() {
-    if(!empty($_POST["action"])) {
-      if($_POST["action"] == "createjob") {
-        $job = $this->flancerDAO->createJob($_POST);
-      }
+    if(!empty($_POST["action"]) && $_POST["action"] == "createjob") {
+        $jobs = $this->flancerDAO->createJob($_POST);
     }
+
   }
 
 public function index() {
@@ -48,6 +47,13 @@ public function index() {
 public function intro() {
 }
 public function job() {
+  $jobs = $this->flancerDAO->selectAllJobs();
+  $this->set('jobs',$jobs);
+
+}
+public function added() {
+  $lastjob = $this->flancerDAO->selectLastAddedJob();
+  $this->set('lastjob',$lastjob);
 }
 
 

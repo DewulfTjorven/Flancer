@@ -8,16 +8,20 @@
   <div class="title">
     <h1 class="padding--bottom">Your jobs</h1>
     <p class="padding--bottom">
-      <?php
-
-    if (empty($data)) {
-      echo 'You did not create a job yet';
-    } 
-    else {
-      var_dump($data);
+    <?php
+    if(!empty($jobs)){
+        foreach($jobs as $job) {
+          echo '<p>' . $job['jobname'] . '</p>' ;
+          echo '<p>' . $job['description'] . '</p>' ;
+          echo '<p>' . $job['duration'] . '</p>' ;
+          echo '<p>' . $job['location'] . '</p>' ;
+          echo '<p>' . $job['skills'] . '</p>' ;
+        }
+    }else{
+      echo '<p>er zijn nog geen jobs aangemaakt</p>';
     }
 
-      ?>
+        ?>
     </p>
   </div>
 </section>

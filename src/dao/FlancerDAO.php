@@ -4,7 +4,7 @@ require_once( __DIR__ . '/DAO.php');
 
 class FlancerDAO extends DAO {
 
-  public function selectAll(){
+  public function selectAllFlancers(){
     $sql = "SELECT * FROM `flancers` ORDER BY `id` DESC";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
@@ -50,6 +50,20 @@ class FlancerDAO extends DAO {
     $stmt->bindValue("location", $data["location"]);
     $stmt->bindValue("skills", $data["skills"]);
     $stmt->execute();
+  }
+
+  public function selectLastAddedJob(){
+    $sql = "SELECT * FROM `jobs` ORDER BY `id` DESC LIMIT 1";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
+  public function selectAllJobs(){
+    $sql = "SELECT * FROM `jobs` ORDER BY `id` DESC";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
 
