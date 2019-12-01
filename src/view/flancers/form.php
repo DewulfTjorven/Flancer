@@ -25,7 +25,12 @@
     <input class="form__location" type="text" name="location" required />
     <label for="form__skills">Required skills</label>
     <input class="form__skills" type="text" name="skills" required />
-    <button type="submit" class="button-blue">Next step</button>
+    <?php
+    if(empty($_POST)){
+    echo '<button type="submit" class="button-blue">Next step</button>';
+    }
+    ?>
+
 
   </form>
 </section>
@@ -33,7 +38,7 @@
 if(!empty($_POST)){
 ?>
 <section class="padding--bottom">
-  <a href="index.php?page=added" class="button-blue">Next</a>
+    <a href="index.php?page=added" class="button-blue button-blue--form">Next</a>
 </section>
 <?php
 }
