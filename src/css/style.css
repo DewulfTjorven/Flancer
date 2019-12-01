@@ -328,6 +328,8 @@ main {
   display: block;
   text-align: center;
   z-index: 1;
+}
+
 .job__price h2{
   font-size: 2.8rem;
   color: white;
