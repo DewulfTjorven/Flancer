@@ -5,31 +5,32 @@
 
 
 <section class="title__section">
-  <div class="title">
     <h1 class="padding--bottom">Your jobs</h1>
-    <p class="padding--bottom">
+    <a href="index.php?page=form"><img src="../images/addjob.svg" alt="add job image" width="22">
+</section>
     <?php
     if(!empty($jobs)){
       foreach($jobs as $job){
-        ?>
-      <a href ="index.php?page=jobdetail&id=<?php echo $job['id']; ?>">
-        <div class="job__card">
-          <div class="flancer__data">
-            <p class="flancer__type"><?php echo $job["jobname"] ?></p>
-            <h2 class="flancer__name"><?php echo $job['price'] ?></h3>
-            <p class="flancer__bio" ><?php echo $job["description"] ?></p>
-              <div class="flancer__info">
-                <p class="flancer__info flancer__info__location"><?php echo '<' . $job["location"] . ' km '?></p>
-                <p class="flancer__info flancer__info__recommendations"><?php echo $job["skills"] ?></p>
-              </div>
-          </div>
+    ?>
+      <a href ="index.php?page=jobdetail&id=<?php echo $job['id']; ?>" class="padding--bottom">
+        <div class="job__card margin--bottom">
+           <div class="job__info">
+            <h2 class="flancer__type"><?php echo $job["jobname"]; ?></h2>
+            <p class="jobdetail__bio" ><?php echo $job["description"]; ?></p>
+            <p class="flancer__info flancer__info__location"><?php echo $job["duration"] . ' days';?></p>
+            <p class="flancer__info flancer__info__recommendations"><?php echo $job["location"]; ?></p>
+            <p class="flancer__info flancer__info__recommendations"><?php echo $job["skills"]; ?></p>
+           </div>
+           <div class="job__price">
+           <h2 class="flancer__name"><?php echo "$" . $job['price'] ?></h3>
+           </div>
         </div>
       </a>
         <?php
       }
 
     }else{
-      echo '<p>er zijn nog geen jobs aangemaakt</p>';
+      echo '<p>No jobs have been added yet</p>';
     }
     ?>
     </p>
@@ -38,7 +39,4 @@
 
 
   <section class="padding--bottom">
-  <a href="index.php?page=form" class="button-blue">Add a job</a>
   </section>
-
-
