@@ -75,25 +75,30 @@ p {
 
 }
 
+.small {
+  width: 14rem;
+}
+
 .button-blue {
   background-color: var(--main--color);
   padding: 1.2rem 4rem;
   color: white;
   border-radius: .15rem;
   box-shadow: var(--button--box--shadow);
-  transition: .2s ease;
-}
-
-.small {
-  width: 14rem;
+  transition: 0.2s ;
 }
 
 .button-blue:hover {
   background-color: var(--main--hover);
-  padding: 1.2rem 4rem;
   color: white;
   border-radius: .15rem;
   transform: scale(1.02);
+}
+
+.button-blue:active {
+  background-color: var(--main--active);
+  transform: scale(1.02);
+
 }
 
 .button-grey {
@@ -240,7 +245,7 @@ main {
 }
 
 .job__form .form__location {
- 
+
 }
 
 .job__form .form__skills {
@@ -278,4 +283,10 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.button-blue--form{
+  display: block;
+  text-align: center;
+  z-index: 1;
 }
