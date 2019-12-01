@@ -10,21 +10,17 @@
     <p class="padding--bottom">
     <?php
     if(!empty($jobs)){
-      foreach($flancers as $flancer){
+      foreach($jobs as $job){
         ?>
-      <a href ="index.php?page=detail&id=<?php echo $flancer['id']; ?>">
-        <div class="flancer__card">
-          <div class="img__div">
-            <img class="flancer__image" src="../images/<?php echo $flancer["image"] ?>" width="104" alt="<?php echo $flancer["firstname"] ?>">
-          </div>
-
+      <a href ="index.php?page=detail&id=<?php echo $job['id']; ?>">
+        <div class="job__card">
           <div class="flancer__data">
-            <p class="flancer__type"><?php echo $flancer["flancetype"] ?></p>
-            <h2 class="flancer__name"><?php echo $flancer["firstname"] . ' ' . $flancer["lastname"] ?></h3>
-            <p class="flancer__bio" ><?php echo $flancer["bio"] ?></p>
+            <p class="flancer__type"><?php echo $job["jobname"] ?></p>
+            <h2 class="flancer__name"><?php echo $job['price'] ?></h3>
+            <p class="flancer__bio" ><?php echo $job["description"] ?></p>
               <div class="flancer__info">
-                <p class="flancer__info flancer__info__location"><?php echo '<' . $flancer["location"] . ' km '?></p>
-                <p class="flancer__info flancer__info__recommendations"><?php echo $flancer["recommendations"] ?> recommendations</p>
+                <p class="flancer__info flancer__info__location"><?php echo '<' . $job["location"] . ' km '?></p>
+                <p class="flancer__info flancer__info__recommendations"><?php echo $job["skills"] ?></p>
               </div>
           </div>
         </div>
