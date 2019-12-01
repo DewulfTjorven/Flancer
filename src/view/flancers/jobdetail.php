@@ -10,7 +10,6 @@
               <p class="flancer__info flancer__info__recommendations"><?php echo $job["location"]; ?></p>
               <p class="flancer__info flancer__info__recommendations"><?php echo $job["skills"]; ?></p>
               <h2 class="flancer__name"><?php echo "$" . $job['price'] ?></h3>
-              <a href="index.php?page=dashboard" class="button-grey">change this job</a><br>
-              <a href="index.php?page=dashboard" class="button-red">delete</a>
+              <a href ="index.php?page=jobupdate&id=<?php echo $job['id']; ?>" class="padding--bottom">Update job</a>
 
 </section>

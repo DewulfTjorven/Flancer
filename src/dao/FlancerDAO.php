@@ -86,6 +86,19 @@ class FlancerDAO extends DAO {
         $stmt->execute();
     }
 
+    public function updateJobInfo($data) {
+      $sql = "UPDATE `jobs` SET `jobname` = :jobname,`description` = :description, `price` = :price, `duration` = :duration, `skills` = :skills, `location` = :location WHERE `id` = :id";
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindValue("jobname", $data['jobname']);
+      $stmt->bindValue("description", $data["description"]);
+      $stmt->bindValue("price", $data["price"]);
+      $stmt->bindValue("duration", $data["duration"]);
+      $stmt->bindValue("location", $data["location"]);
+      $stmt->bindValue("skills", $data["skills"]);
+      $stmt->bindValue(':id', $data['id']);
+      $stmt->execute();
+  }
+
 
 
 

@@ -61,7 +61,11 @@ public function formupdate() {
       $job['location'] = $_POST['location'];
 
       $updatedJob = $this->flancerDAO->updateJob($job);
+
+      header('Location:index.php?page=added');
+      exit;
     }
+
       // de geselecteerde show aanpassen met de waarden uit de $_POST (het formulier dus)
 
 
@@ -71,6 +75,38 @@ public function formupdate() {
   }
 }
 
+public function jobUpdate() {
+  if(!empty($_GET['id'])){
+    $job = $this->flancerDAO->selectByJobId($_GET['id']);
+    $this->set('job',$job);
+
+  }
+
+  
+
+  if(!empty($_GET['state'])){
+    if($_GET['state'] == 'updated'){
+      $this->set('updated',true);
+    }
+  }
+
+  if (!empty($_POST['action'])) {
+    if ($_POST['action'] == 'jobupdate'){
+      $job['id'] = $_POST['id'];
+      $job['jobname'] = $_POST['jobname'];
+      $job['description'] = $_POST['description'];
+      $job['duration'] = $_POST['duration'];
+      $job['skills'] = $_POST['skills'];
+      $job['price'] = $_POST['price'];
+      $job['location'] = $_POST['location'];
+
+      $updatedJob = $this->flancerDAO->updateJobInfo($job);
+
+      header('Location:index.php?page=added');
+      exit;
+    }
+    }
+    }
 
 public function index() {
 }
@@ -94,6 +130,8 @@ public function jobdetail() {
 
   $this->set('job',$job);
 }
+
+
 
 
 }
