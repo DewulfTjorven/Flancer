@@ -18,10 +18,10 @@
     <input type="hidden" name="page" value="dashboard" />
     <input type="hidden" name="action" value="filter" />
       <select name="orderby" id="orderby" class="orderby">
-       <option value="newest">newest</option>';
-       <option value="recommendations">recommendations</option>
-       <option value="location">location</option>
-       <option value="pricelow">lowest price</option>
+       <option value="newest" <?php if(!empty($_GET['orderby']) && $_GET['orderby'] == 'newest'){echo 'selected';} ?>>newest</option>;
+       <option value="recommendations" <?php if(!empty($_GET['orderby']) && $_GET['orderby'] == 'recommendations'){echo 'selected';} ?>>recommendations</option>
+       <option value="location" <?php if(!empty($_GET['orderby']) && $_GET['orderby'] == 'location'){echo 'selected';} ?>>location</option>
+       <option value="pricelow" <?php if(!empty($_GET['orderby']) && $_GET['orderby'] == 'pricelow'){echo 'selected';} ?>>lowest price</option>
       </select>
       <input type="submit" value="Filter" class="form__submit input input--button">
     </form>
