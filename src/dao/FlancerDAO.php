@@ -50,6 +50,7 @@ class FlancerDAO extends DAO {
     $stmt->bindValue("location", $data["location"]);
     $stmt->bindValue("skills", $data["skills"]);
     $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function selectLastAddedJob(){
