@@ -23,5 +23,6 @@
       <?php echo $content;?>
     </main>
     <?php echo $js; ?>
+    <script src="js/validate.js"></script>
   </body>
 </html>

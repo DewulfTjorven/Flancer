@@ -81,10 +81,11 @@ public function jobUpdate() {
   if(!empty($_GET['id'])){
     $job = $this->flancerDAO->selectByJobId($_GET['id']);
     $this->set('job',$job);
-
   }
 
-  
+
+
+
 
   if(!empty($_GET['state'])){
     if($_GET['state'] == 'updated'){
@@ -118,6 +119,12 @@ public function job() {
   $jobs = $this->flancerDAO->selectAllJobs();
   $this->set('jobs',$jobs);
 
+  if(!empty($_POST['action'])){
+    if($_POST['action'] == 'deleteJob'){
+      $this->flancerDAO->deleteJob($_POST['id']);
+    }
+  }
+
 }
 
 public function added() {
@@ -126,6 +133,9 @@ public function added() {
 }
 
 public function jobdetail() {
+
+
+
   if(!empty($_GET['id'])){
     $job = $this->flancerDAO->selectByJobId($_GET['id']);
   }
