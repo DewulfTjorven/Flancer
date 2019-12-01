@@ -84,6 +84,10 @@ p {
   transition: .2s ease;
 }
 
+.small {
+  width: 14rem;
+}
+
 .button-blue:hover {
   background-color: var(--main--hover);
   padding: 1.2rem 4rem;
@@ -93,7 +97,6 @@ p {
 }
 
 .button-grey {
-
   color: var(--main--grey--color);
   opacity: .8;
 }
@@ -188,6 +191,59 @@ main {
 
 .details {
   padding-top: var(--padding--top);
+}
+
+.job__form {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+}
+
+.job__form label {
+  padding-bottom: .8rem;
+  color: var(--light--text--color);
+}
+
+.job__form input {
+  background-color: #eeee;
+  height: 2.8rem;
+  border: none;
+  border-radius: .2rem;
+  margin-bottom: 1rem;
+  padding: .3rem;
+}
+
+.job__form textarea {
+  background-color: #eeee;
+  border: none;
+  border-radius: .2rem;
+  margin-bottom: 1rem;
+  padding: .3rem;
+  resize: none;
+}
+
+.job__form .form__jobname {
+
+}
+
+.job__form .form__textarea {
+}
+
+.job__form .form__price {
+
+}
+
+.job__form .form__duration {
+
+}
+
+.job__form .form__location {
+ 
+}
+
+.job__form .form__skills {
 }
 
 .padding--bottom {
