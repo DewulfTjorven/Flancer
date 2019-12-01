@@ -41,7 +41,7 @@
 @media only screen and (min-width: 1050px) {
  
   .flancer__card {
-    width: 44rem;
+    width: 46rem;
   }
  
 }
@@ -56,7 +56,7 @@
 @media only screen and (min-width: 1440px) {
   
   .flancer__card {
-    width: 54rem;
+    width: 56rem;
   }
 }
 
