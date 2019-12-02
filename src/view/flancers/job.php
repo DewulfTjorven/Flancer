@@ -26,7 +26,7 @@
            </div>
         </div>
       </a>
-        <?php
+      <?php
       }
 
     }else{
@@ -38,5 +38,3 @@
 </section>
 
 
-  <section class="padding--bottom">
-  </section>

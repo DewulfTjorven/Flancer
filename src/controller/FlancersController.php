@@ -35,25 +35,13 @@ class FlancersController extends Controller {
 
  }
 
-public function form() {
-  /*
+  public function form() {
     if(!empty($_POST["action"]) && $_POST["action"] == "createjob") {
         $jobs = $this->flancerDAO->createJob($_POST);
         $errors = $this->flancerDAO->validate($_POST);
         $this->set('errors',$errors);
     }
-  */
-  if(!empty($_POST['action'])){
-    if($_POST['action'] == 'createjob'){
-      $createdJob = $this->flancerDAO->createJob($_POST);
-      if(!$createdJob){
-        $errors = $this->flancerDAO->validate($_POST);
-        $this->set('errors',$errors);
-      }
-    }
   }
-
-}
 
 public function formupdate() {
   $lastjob = $this->flancerDAO->selectLastAddedJob();
@@ -75,28 +63,21 @@ public function formupdate() {
 
       $updatedJob = $this->flancerDAO->updateJob($job);
 
-      header('Location:index.php?page=added');
+      header('Location:index.php?page=job');
       exit;
+
     }
-
-      // de geselecteerde show aanpassen met de waarden uit de $_POST (het formulier dus)
-
-
-      // de serie updaten in de database en de gewijzigde serie ophalen
-
-      // controleren of dit gelukt is
   }
+
 }
+
+
 
 public function jobUpdate() {
   if(!empty($_GET['id'])){
     $job = $this->flancerDAO->selectByJobId($_GET['id']);
     $this->set('job',$job);
   }
-
-
-
-
 
   if(!empty($_GET['state'])){
     if($_GET['state'] == 'updated'){
@@ -117,45 +98,37 @@ public function jobUpdate() {
 
       $updatedJob = $this->flancerDAO->updateJobInfo($job);
 
-      header('Location:index.php?page=added');
+      header('Location:index.php?page=job');
       exit;
     }
     }
-    }
-
-public function index() {
-}
-public function intro() {
-}
-public function job() {
-  $jobs = $this->flancerDAO->selectAllJobs();
-  $this->set('jobs',$jobs);
-
-  if(!empty($_POST['action'])){
-    if($_POST['action'] == 'deleteJob'){
-      $this->flancerDAO->deleteJob($_POST['id']);
-    }
   }
 
-}
+  public function job() {
+    $jobs = $this->flancerDAO->selectAllJobs();
+    $this->set('jobs',$jobs);
 
-public function added() {
-  $lastjob = $this->flancerDAO->selectLastAddedJob();
-  $this->set('lastjob',$lastjob);
-}
-
-public function jobdetail() {
-
-
-
-  if(!empty($_GET['id'])){
-    $job = $this->flancerDAO->selectByJobId($_GET['id']);
   }
 
-  $this->set('job',$job);
+  public function jobdetail() {
+
+    if(!empty($_GET['id'])){
+      $job = $this->flancerDAO->selectByJobId($_GET['id']);
+    }
+
+    $this->set('job',$job);
+
+  }
+
+  public function added() {
+    $lastjob = $this->flancerDAO->selectLastAddedJob();
+    $this->set('lastjob',$lastjob);
+  }
+
+  public function index() {
+  }
+  public function intro() {
+  }
 }
 
 
-
-
-}

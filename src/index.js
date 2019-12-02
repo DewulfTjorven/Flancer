@@ -4,45 +4,79 @@ require('./css/responsive.css');
 require('./css/vars.css');
 
 {
+  const handleSubmitForm = e => {
+    const $form = e.currentTarget;
+    if (!$form.checkValidity()) {
+      e.preventDefault();
 
-  const init = () => {
-    
-    /*
-    function displayForm() {
+      const fields = $form.querySelectorAll(`.input`);
+      fields.forEach(showValidationInfo);
 
-      var price = document.querySelector(".form__price");
-      var duration = document.querySelector(".form__duration");
-      var location = document.querySelector(".form__location");
-      var skills = document.querySelector(".form__skills");
+      $form.querySelector(`.error`).innerHTML = `Some errors occured`;
+    } else {
+      console.log(`Form is valid => submit form`);
+    }
+  };
 
-      if (price.style.display === "none") {
-        price.style.display = "block";
-      } else {
-        price.style.display = "none";
-      }
+  const showValidationInfo = $field => {
+    let message;
+    if ($field.validity.valueMissing) {
+      message = `Required`;
+    }
+    if ($field.validity.typeMismatch) {
+      message = `Type not right`;
+    }
+    if ($field.validity.rangeOverflow) {
+      const max = $field.getAttribute(`max`);
+      message = `Too big, max ${max}`;
+    }
+    if ($field.validity.rangeUnderflow) {
+      const min = $field.getAttribute(`min`);
+      message = `Too small, min ${min}`;
+    }
+    if ($field.validity.tooShort) {
+      const min = $field.getAttribute(`minlength`);
+      message = `Too short, minimum length is ${min}`;
+    }
+    if ($field.validity.tooLong) {
+      const max = $field.getAttribute(`maxlength`);
+      message = `Too long, maximum length is ${max}`;
+    }
+    if (message) {
+      $field.parentElement.querySelector(`.error`).textContent = message;
+    }
+  };
 
-      if (duration.style.display === "none") {
-        duration.style.display = "block";
-      } else {
-        duration.style.display = "none";
-      }
-
-      if (location.style.display === "none") {
-        location.style.display = "block";
-      } else {
-        location.style.display = "none";
-      }
-      
-      if (skills.style.display === "none") {
-        skills.style.display = "block";
-      } else {
-        skills.style.display = "none";
+  const handeInputField = e => {
+    const $field = e.currentTarget;
+    if ($field.checkValidity()) {
+      $field.parentElement.querySelector(`.error`).textContent = ``;
+      if ($field.form.checkValidity()) {
+        $field.form.querySelector(`.error`).innerHTML = ``;
       }
     }
-
-    document.getElementById("showForm").addEventListener("click", displayForm);
-*/
-    
   };
+
+  const handeBlurField = e => {
+    const $field = e.currentTarget;
+    showValidationInfo($field);
+  };
+
+  const addValidationListeners = fields => {
+    fields.forEach($field => {
+      $field.addEventListener(`input`, handeInputField);
+      $field.addEventListener(`blur`, handeBlurField);
+    });
+  };
+
+  const init = () => {
+    const $form = document.querySelector(`form`);
+    $form.noValidate = true;
+    $form.addEventListener(`submit`, handleSubmitForm);
+
+    const fields = $form.querySelectorAll(`.input`);
+    addValidationListeners(fields);
+  };
+
   init();
 }

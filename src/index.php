@@ -51,8 +51,7 @@ $routes = array(
   ),'jobupdate' => array(
     'controller' => 'Flancers',
     'action' => 'jobupdate'
-    
-    )
+  )
 );
 
 if(empty($_GET['page'])) {
