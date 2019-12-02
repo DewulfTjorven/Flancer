@@ -12,12 +12,12 @@
     <input type="hidden" name="id" value="<?php echo $lastjob['id'] ?>">
 
     <label for="form__price" class=>Budget</label>
-    <input class="form__price" type="number" name="price" min=0 required />
+    <input class="input form__price" type="number" name="price" min=0 required />
     <label for="form__duration">Duration in days</label>
-    <input class="form__duration" type="number" name="duration" min=0 required />
+    <input class="input form__duration" type="number" name="duration" min=0 required />
     <label for="form__location">Location</label>
-    <input class="form__location" type="text" name="location" required />
+    <input class="input form__location" type="text" name="location" required />
     <label for="form__skills">Required skills</label>
-    <input class="form__skills" type="text" name="skills" required />
+    <input class="input form__skills" type="text" name="skills" required />
     <button href="index.php?page=job" type="submit" class="button-blue">Add job</button>
 </form>

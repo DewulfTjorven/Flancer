@@ -18,7 +18,7 @@
         if(!empty($_SESSION['info'])) {
           echo '<div class="info box">' . $_SESSION['info'] . '</div>';
         }
-        
+
       ?>
       <?php echo $content;?>
     </main>
