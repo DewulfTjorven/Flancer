@@ -29,6 +29,10 @@ button{
   border: none;
 }
 
+.error{
+  color: red;
+}
+
 h1 {
   font-size: var(--font--title--size);
   color: var(--main--color);

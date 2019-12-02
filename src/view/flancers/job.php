@@ -20,19 +20,13 @@
             <p class="flancer__info flancer__info__location"><?php echo $job["duration"] . ' days';?></p>
             <p class="flancer__info flancer__info__recommendations"><?php echo $job["location"]; ?></p>
             <p class="flancer__info flancer__info__recommendations"><?php echo $job["skills"]; ?></p>
-
            </div>
            <div class="job__price">
            <h2 class="flancer__name"><?php echo "$" . $job['price'] ?></h3>
            </div>
         </div>
       </a>
-        <form action="index.php?page=job" method="post">
-            <input type="hidden" name="action" value="deleteJob">
-            <input type="hidden" name="id" value="<?php $job['id']?>">
-            <input type="submit" value="verwijderen">
-        </form>
-      <?php
+        <?php
       }
 
     }else{

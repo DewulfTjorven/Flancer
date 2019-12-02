@@ -48,6 +48,8 @@ class FlancerDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+/*
+
   public function createjob($data) {
     $sql = "INSERT INTO `jobs` (`jobname`, `description`, `price`, `duration`, `location`, `skills`) VALUES (:jobname, :description, :price, :duration, :location, :skills)";
     $stmt = $this->pdo->prepare($sql);
@@ -59,6 +61,24 @@ class FlancerDAO extends DAO {
     $stmt->bindValue("skills", $data["skills"]);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+*/
+
+  public function createjob($data){
+    $errors = $this->validate($data);
+    if(empty($errors)){
+      $sql = "INSERT INTO `jobs` (`jobname`, `description`, `price`, `duration`, `location`, `skills`) VALUES (:jobname, :description, :price, :duration, :location, :skills)";
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindValue("jobname", $data["jobname"]);
+      $stmt->bindValue("description", $data["description"]);
+      $stmt->bindValue("price", $data["price"]);
+      $stmt->bindValue("duration", $data["duration"]);
+      $stmt->bindValue("location", $data["location"]);
+      $stmt->bindValue("skills", $data["skills"]);
+      $stmt->execute();
+    }
+    return false;
   }
 
   public function selectLastAddedJob(){
@@ -105,6 +125,23 @@ class FlancerDAO extends DAO {
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
+  }
+
+  public function validate($data){
+    $errors = [];
+    if (empty($data['jobname'])) {
+      $errors['quote'] = 'Please give your job a name';
+    }
+    if (empty($data['description'])) {
+      $errors['author'] = 'Please give your job a description';
+    }
+    if (empty($data['price'])) {
+      $errors['author'] = 'Please give your job a price';
+    }
+    if (empty($data['location'])) {
+      $errors['author'] = 'Please enter your adress';
+    }
+    return $errors;
   }
 
 

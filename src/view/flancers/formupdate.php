@@ -10,7 +10,6 @@
 <form action="index.php?page=formupdate" method="post">
     <input type="hidden" name="action" value="updatejob">
     <input type="hidden" name="id" value="<?php echo $lastjob['id'] ?>">
-
     <label for="form__price" class=>Budget</label>
     <input class="form__price" type="number" name="price" min=0 required />
     <label for="form__duration">Duration in days</label>
@@ -20,5 +19,4 @@
     <label for="form__skills">Required skills</label>
     <input class="form__skills" type="text" name="skills" required />
     <button href="index.php?page=job" type="submit" class="button-blue">Add job</button>
-
 </form>

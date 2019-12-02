@@ -36,9 +36,22 @@ class FlancersController extends Controller {
  }
 
 public function form() {
+  /*
     if(!empty($_POST["action"]) && $_POST["action"] == "createjob") {
         $jobs = $this->flancerDAO->createJob($_POST);
+        $errors = $this->flancerDAO->validate($_POST);
+        $this->set('errors',$errors);
     }
+  */
+  if(!empty($_POST['action'])){
+    if($_POST['action'] == 'createjob'){
+      $createdJob = $this->flancerDAO->createJob($_POST);
+      if(!$createdJob){
+        $errors = $this->flancerDAO->validate($_POST);
+        $this->set('errors',$errors);
+      }
+    }
+  }
 
 }
 
@@ -100,6 +113,7 @@ public function jobUpdate() {
       $job['skills'] = $_POST['skills'];
       $job['price'] = $_POST['price'];
       $job['location'] = $_POST['location'];
+
 
       $updatedJob = $this->flancerDAO->updateJobInfo($job);
 
