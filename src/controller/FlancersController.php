@@ -38,8 +38,6 @@ class FlancersController extends Controller {
   public function form() {
     if(!empty($_POST["action"]) && $_POST["action"] == "createjob") {
         $jobs = $this->flancerDAO->createJob($_POST);
-        $errors = $this->flancerDAO->validate($_POST);
-        $this->set('errors',$errors);
     }
   }
 
@@ -63,12 +61,10 @@ public function formupdate() {
 
       $updatedJob = $this->flancerDAO->updateJob($job);
 
-      header('Location:index.php?page=job');
+      header('Location:index.php?page=added');
       exit;
-
     }
   }
-
 }
 
 
@@ -95,7 +91,6 @@ public function jobUpdate() {
       $job['price'] = $_POST['price'];
       $job['location'] = $_POST['location'];
 
-
       $updatedJob = $this->flancerDAO->updateJobInfo($job);
 
       header('Location:index.php?page=job');
@@ -103,7 +98,7 @@ public function jobUpdate() {
     }
     }
   }
-
+  
   public function job() {
     $jobs = $this->flancerDAO->selectAllJobs();
     $this->set('jobs',$jobs);
@@ -116,8 +111,14 @@ public function jobUpdate() {
       $job = $this->flancerDAO->selectByJobId($_GET['id']);
     }
 
-    $this->set('job',$job);
+    if (!empty($_GET['action'])) {
+      if ($_GET['action'] == 'delete' && isset($_GET['id'])) {
+        $flancerDAO->deleteJob($_GET['id']);
+      }
+    }
 
+    $this->set('job',$job);
+  
   }
 
   public function added() {

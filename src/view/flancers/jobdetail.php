@@ -14,7 +14,6 @@
               <form action="index.php?page=jobdetail" method="post">
                 <input type="hidden" name="action" value="delete">
                 <input type="hidden" name="id" value="<?php $job['id']?>">
-                <input type="submit" value="verwijderen">
               </form>
 
 </section>

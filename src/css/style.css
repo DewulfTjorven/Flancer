@@ -29,10 +29,6 @@ button{
   border: none;
 }
 
-.error{
-  color: red;
-}
-
 h1 {
   font-size: var(--font--title--size);
   color: var(--main--color);
@@ -251,29 +247,6 @@ main {
   font-family: Roboto, sans-serif;
 
 }
-
-.job__form .form__jobname {
-
-}
-
-.job__form .form__textarea {
-}
-
-.job__form .form__price {
-
-}
-
-.job__form .form__duration {
-
-}
-
-.job__form .form__location {
-
-}
-
-.job__form .form__skills {
-}
-
 .padding--bottom {
   padding-bottom: var(--padding--bottom);
 }

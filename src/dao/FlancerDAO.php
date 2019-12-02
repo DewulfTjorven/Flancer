@@ -18,7 +18,6 @@ class FlancerDAO extends DAO {
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
-
   public function selectByJobId($id){
     $sql = "SELECT * FROM `jobs` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
@@ -48,8 +47,6 @@ class FlancerDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-/*
-
   public function createjob($data) {
     $sql = "INSERT INTO `jobs` (`jobname`, `description`, `price`, `duration`, `location`, `skills`) VALUES (:jobname, :description, :price, :duration, :location, :skills)";
     $stmt = $this->pdo->prepare($sql);
@@ -63,26 +60,8 @@ class FlancerDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-*/
-
-  public function createjob($data){
-    $errors = $this->validate($data);
-    if(empty($errors)){
-      $sql = "INSERT INTO `jobs` (`jobname`, `description`, `price`, `duration`, `location`, `skills`) VALUES (:jobname, :description, :price, :duration, :location, :skills)";
-      $stmt = $this->pdo->prepare($sql);
-      $stmt->bindValue("jobname", $data["jobname"]);
-      $stmt->bindValue("description", $data["description"]);
-      $stmt->bindValue("price", $data["price"]);
-      $stmt->bindValue("duration", $data["duration"]);
-      $stmt->bindValue("location", $data["location"]);
-      $stmt->bindValue("skills", $data["skills"]);
-      $stmt->execute();
-    }
-    return false;
-  }
-
   public function selectLastAddedJob(){
-    $sql = "SELECT * FROM `jobs` ORDER BY `id` DESC";
+    $sql = "SELECT * FROM `jobs` ORDER BY `id` DESC LIMIT 1";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -118,31 +97,5 @@ class FlancerDAO extends DAO {
       $stmt->bindValue("skills", $data["skills"]);
       $stmt->bindValue(':id', $data['id']);
       $stmt->execute();
+    }
   }
-
-  public function deleteJob($id){
-    $sql = "DELETE FROM `jobs` WHERE `id` = :id";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
-  }
-
-  public function validate($data){
-    $errors = [];
-    if (empty($data['jobname'])) {
-      $errors['quote'] = 'Please give your job a name';
-    }
-    if (empty($data['description'])) {
-      $errors['author'] = 'Please give your job a description';
-    }
-    if (empty($data['price'])) {
-      $errors['author'] = 'Please give your job a price';
-    }
-    if (empty($data['location'])) {
-      $errors['author'] = 'Please enter your adress';
-    }
-    return $errors;
-  }
-
-
-}
