@@ -62,7 +62,7 @@ class FlancerDAO extends DAO {
   }
 
   public function selectLastAddedJob(){
-    $sql = "SELECT * FROM `jobs` ORDER BY `id` DESC LIMIT 1";
+    $sql = "SELECT * FROM `jobs` ORDER BY `id` DESC";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);

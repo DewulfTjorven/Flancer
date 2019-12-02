@@ -27,11 +27,6 @@
            </div>
         </div>
       </a>
-        <form action="index.php?page=job" method="post">
-            <input type="hidden" name="action" value="deleteJob">
-            <input type="hidden" name="id" value="<?php $job['id']?>">
-            <input type="submit" value="verwijderen">
-        </form>
       <?php
       }
 
@@ -44,5 +39,3 @@
 </section>
 
 
-  <section class="padding--bottom">
-  </section>

@@ -50,7 +50,7 @@ $routes = array(
 
   ),'jobupdate' => array(
     'controller' => 'Flancers',
-    'action' => 'formupdate'
+    'action' => 'jobupdate'
   )
 );
 

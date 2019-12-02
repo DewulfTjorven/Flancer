@@ -5,6 +5,7 @@
   <div class="title">
     <h1 class="padding--bottom">This the job you added.</h1>
     <article class="lastjob">
+
     <p class="padding--bottom"><?php echo $lastjob['jobname']?></h2>
     <p class="padding--bottom"><?php echo $lastjob['description']?></h2>
     <p class="padding--bottom"><?php echo $lastjob['price']?></h2>

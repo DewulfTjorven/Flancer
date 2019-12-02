@@ -11,7 +11,6 @@
   <div class="error"></div>
 <form action="index.php?page=form" method="POST" class="job__form">
     <input type="hidden" name="action" value="createjob" class=""/>
-    <input type="hidden" name="page" value="added"/>
     <label for="form__jobname">Name of the job</label>
     <input class="form__jobname padding--bottom" type="text" name="jobname" value="<?php if(!empty($_POST['jobname']) && $_POST['action'] == 'createjob'){echo $_POST['jobname'];} ?>" required placeholder="Name of the job"/>
     <label for="form__textarea">Describe your job offer</label>
@@ -24,14 +23,8 @@
       <a href="index.php?page=formupdate" class="button-blue">Add job info</a>
     <?php }else{ ?>
 
-      <button  type="submit" class="button-blue">Add job</button>
+      <button  type="submit" class="button-blue">Verify info</button>
     <?php } ?>
 
   </form>
 </section>
-<?php
-if(!empty($_POST)){
-?>
-<?php
-}
-?>
