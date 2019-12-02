@@ -120,6 +120,10 @@ p {
   color: var(--main--error--color);
 }
 
+.error{
+  color: var(--main--error--color);
+}
+
 main {
   width: 85%;
   margin: auto;

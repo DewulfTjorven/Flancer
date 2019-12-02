@@ -1,3 +1,4 @@
+/*
 {
   const handleSubmitForm = e => {
     const $form = e.currentTarget;
@@ -74,4 +75,4 @@
   };
 
   init();
-}
+}*/
