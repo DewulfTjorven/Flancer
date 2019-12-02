@@ -18,6 +18,14 @@ class FlancerDAO extends DAO {
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
+
+  public function selectAllJobs(){
+    $sql = "SELECT * FROM `jobs` WHERE `skills`!= '/' ORDER BY `id` DESC";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function selectByJobId($id){
     $sql = "SELECT * FROM `jobs` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
@@ -65,13 +73,6 @@ class FlancerDAO extends DAO {
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
-  }
-
-  public function selectAllJobs(){
-    $sql = "SELECT * FROM `jobs` WHERE `skills`!= '/' ORDER BY `id` DESC";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
     // job updaten in de database

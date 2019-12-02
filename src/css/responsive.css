@@ -10,7 +10,6 @@
     flex-direction: column;
   }
 
-
   .flancer__bio {
     width: 95%;
   }
@@ -30,20 +29,19 @@
 }
 
 @media only screen and (min-width: 980px) {
- 
+
   .flancer__card {
     width: 40rem;
   }
 
-
 }
 
 @media only screen and (min-width: 1050px) {
- 
+
   .flancer__card {
     width: 42rem;
   }
- 
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -54,9 +52,8 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  
+
   .flancer__card {
     width: 56rem;
   }
 }
-
