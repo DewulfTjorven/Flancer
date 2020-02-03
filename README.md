@@ -28,3 +28,4 @@ Het doel van Flance is om bedrijven die hulp nodig hebben, freelancers te laten 
 - Babel die css omzet voor alle browsers
 - Es en stylelint
 - HTML en CSSS
+# Flancer
